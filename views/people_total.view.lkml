@@ -1,6 +1,6 @@
 view: people_total {
   derived_table: {
-    sql: sql: WITH totals as(
+    sql:WITH totals as(
     SELECT
     to_char(snapshot_date,'YYYY-MM') as month,
     count (distinct(id)) as total
