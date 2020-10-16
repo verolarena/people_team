@@ -3,7 +3,7 @@ view: people_total {
     sql:
     SELECT
     to_char(snapshot_date,'YYYY-MM') as month,
-    count (distinct(id)) as total
+    count (distinct(id)) as total_employees
     FROM dwh_bamboohr_employees_snapshot
     WHERE status = 'Active' AND job_title NOT IN ('Consultant', 'Non-Employee')
     Group by 1
@@ -22,7 +22,7 @@ view: people_total {
   }
 
   measure: total {
-    type: number
+    type: sum
     sql: ${TABLE}.total ;;
   }
 

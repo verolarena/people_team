@@ -28,6 +28,6 @@ explore: bamboo_employees_snapshots {}
 explore: people_budget_forecast{
   join: people_total {
     relationship: one_to_one
-    sql_on:${people_budget_forecast.date}= ${people_total.month}  ;;
+    sql_on:${people_budget_forecast.date}= ${people_total.month};;
   }
 }
