@@ -16,11 +16,13 @@ view: total_employees {
 
   dimension: month {
     type: string
-    sql: ${TABLE}.month ;;
+    primary_key: yes
+    sql: ${TABLE}.month
+    ;;
   }
 
-  dimension: total {
-    type: number
+   measure: total {
+    type: sum
     sql: ${TABLE}.total ;;
   }
 

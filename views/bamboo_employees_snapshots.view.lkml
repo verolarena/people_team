@@ -11,7 +11,7 @@ view: bamboo_employees_snapshots {
 
   dimension_group: snapshot_date {
     type: time
-    timeframes: [date, week, month]
+    timeframes: [date, week, month,quarter]
     sql: ${TABLE}.snapshot_date ;;
   }
 

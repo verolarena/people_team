@@ -60,13 +60,13 @@ view: hiring_budget_forecast {
     sql: ${TABLE}.date ;;
   }
 
-  dimension: budget {
-    type: number
+  measure: budget {
+    type: sum
     sql: ${TABLE}.budget ;;
   }
 
-  dimension: forecast {
-    type: number
+  measure: forecast {
+    type: sum
     sql: ${TABLE}.forecast ;;
   }
 
