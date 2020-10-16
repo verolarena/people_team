@@ -1,4 +1,4 @@
-view: people_budget_forecast {
+view: hiring_budget_forecast {
   derived_table: {
     sql: SELECT
         '2019-09' AS date, 556 AS budget, NULL AS forecast
@@ -47,7 +47,7 @@ view: people_budget_forecast {
       UNION ALL
       SELECT
         '2020-12' AS date, 749 AS budget, 836 AS forecast
-       ;;
+ ;;
   }
 
   measure: count {
@@ -60,17 +60,17 @@ view: people_budget_forecast {
     sql: ${TABLE}.date ;;
   }
 
-  measure: budget {
-    type: sum
+  dimension: budget {
+    type: number
     sql: ${TABLE}.budget ;;
   }
 
-  measure: forecast {
-    type: sum
+  dimension: forecast {
+    type: number
     sql: ${TABLE}.forecast ;;
   }
 
   set: detail {
-    fields: [date,budget,forecast]
+    fields: [date, budget, forecast]
   }
 }
