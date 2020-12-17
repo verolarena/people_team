@@ -44,6 +44,10 @@ view: bamboo_employees {
     sql: ${TABLE}.last_name ;;
   }
 
+  dimension: employee_name {
+    sql: (CAST(${first_name} AS VARCHAR) || CAST(' ' AS VARCHAR) || CAST(${last_name} AS VARCHAR)) ;;
+  }
+
   dimension: job_title {
     type: string
     sql: ${TABLE}.job_title ;;
@@ -132,6 +136,7 @@ view: bamboo_employees {
       status,
       first_name,
       middle_name,
+      employee_name,
       last_name,
       job_title,
       country,
