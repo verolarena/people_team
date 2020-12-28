@@ -31,3 +31,10 @@ explore: total_employees{
     sql_on: ${total_employees.month} = ${hiring_budget_forecast.date} ;;
   }
 }
+
+explore: people_compliance {
+  join: bamboo_employees {
+    relationship: one_to_one
+    sql_on: ${people_compliance.employee_name} = ${bamboo_employees.employee_name} ;;
+  }
+}
