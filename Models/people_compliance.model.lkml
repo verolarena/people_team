@@ -20,7 +20,7 @@ include: "/compliance/*.view.lkml"                # include all views in the vie
 # }
 explore: people_compliance {
   join: compliance_bamboohr {
-    relationship: one_to_one
+    relationship: one_to_many
     sql_on: ${people_compliance.employee_name} = ${compliance_bamboohr.employee_name} ;;
   }
 }
