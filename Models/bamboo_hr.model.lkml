@@ -23,6 +23,10 @@ explore: bamboo_employees {
     relationship: one_to_one
     sql_on: ${bamboo_employees.id} = ${bamboo_job_information.employee_id} ;;
      }
+  join: reports_to {
+    relationship: one_to_one
+    sql_on: ${bamboo_employees.id} = ${reports_to.id} ;;
+  }
     }
 explore: bamboo_employees_snapshots {}
 explore: total_employees{
