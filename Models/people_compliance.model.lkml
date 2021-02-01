@@ -18,4 +18,9 @@ include: "/compliance/*.view.lkml"                # include all views in the vie
 #     sql_on: ${users.id} = ${orders.user_id} ;;
 #   }
 # }
-explore: people_compliance {}
+explore: people_compliance {
+  join: compliance_bamboohr {
+    relationship: one_to_one
+    sql_on: ${people_compliance.employee_name} = ${compliance_bamboohr.employee_name} ;;
+  }
+}
