@@ -45,6 +45,7 @@ view: people_compliance {
   }
 
   dimension: employee_name {
+    primary_key: yes
     type: string
     sql: ${TABLE}.employee_name ;;
   }
