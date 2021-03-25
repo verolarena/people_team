@@ -74,10 +74,9 @@ view: employee_compliance {
     sql: ${TABLE}.work_email ;;
   }
 
-  dimension: hire_date {
-    type: date
-    sql: ${TABLE}.hire_date ;;
-    can_filter: yes
+  dimension_group: hire_date {
+    type: time
+    sql:${TABLE}.hire_date ;;
   }
 
   dimension: division {
@@ -209,7 +208,7 @@ view: employee_compliance {
     fields: [
       employee_name,
       work_email,
-      hire_date,
+      hire_date_time,
       division,
       employee_number,
       department,

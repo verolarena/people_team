@@ -50,6 +50,7 @@ view: compliance_bamboohr {
   }
 
   dimension: employee_name {
+    primary_key: yes
     type: string
     sql: CONCAT(${TABLE}.first_name,CONCAT(' ', ${TABLE}.last_name))  ;;
   }
